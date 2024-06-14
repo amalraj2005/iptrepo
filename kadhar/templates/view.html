@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>viewing</title>
+
+</head>
+<body>
+<form method="post" action="">
+    {% csrf_token %}
+  {% for i in form %}
+  <label> name </label>{{i.name}}<br>
+  <label> age </label>{{i.age}}<br>
+  <label> date </label>{{i.date}}<br>
+    <button ><a href="{% url 'edit' i.id %}">Edit</a> </button><br>
+    <button ><a href="{% url 'delete' i.id %}">delete</a> </button><br>
+  {% endfor %}
+</form>
+</body>
+</html>
